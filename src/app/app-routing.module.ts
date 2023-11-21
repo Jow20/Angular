@@ -8,6 +8,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { authGuard } from './components/auth.guard';
 import { LoginComponent } from './components/login/login.component';
+import { FormularioUnoComponent } from './componentes/formulario-uno/formulario-uno.component';
+import { FormularioDosComponent } from './componentes/formulario-dos/formulario-dos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +23,8 @@ const routes: Routes = [
       { path: ':entorno', component: DashboardDetailsComponent }, //misitio.cl/dashboard/:entorno
     ]
   },
-
+  { path: 'formulario-uno', component: FormularioUnoComponent }, 
+  { path: 'formulario-dos', component: FormularioDosComponent }, 
   { path: '**', component: NotFoundComponent } //misitio.cl/sdfsdfsdsdfs
 ];
 

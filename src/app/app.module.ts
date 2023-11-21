@@ -18,7 +18,9 @@ import { DashboardDetailsComponent } from './components/dashboard-details/dashbo
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormularioUnoComponent } from './componentes/formulario-uno/formulario-uno.component';
+import { FormularioDosComponent } from './componentes/formulario-dos/formulario-dos.component';
 
 
 @NgModule({
@@ -36,12 +38,15 @@ import { FormsModule } from '@angular/forms';
     NotFoundComponent,
     AdminDashboardComponent,
     LoginComponent,
+    FormularioUnoComponent,
+    FormularioDosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [
     CapitalizarPipe,

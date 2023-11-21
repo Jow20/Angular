@@ -1,0 +1,79 @@
+<p>formulario-uno works!</p>
+
+{{ formData | json }}
+<form #myform="ngForm" (ngSubmit)="myform.form.valid && onSubmit(myform);">
+    <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input #name="ngModel" type="text" id="name" name="name" [(ngModel)]="formData.name" class="form-control" required minlength="3" maxlength="16">
+
+        <div *ngIf="(name.touched || myform.submitted) && name.hasError('required')">El nombre es requerido.</div>
+        <div *ngIf="(name.touched || myform.submitted) && name.hasError('minlength')">El nombre debe tener al menos 3
+            caracteres.</div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Apellido:</label>
+        <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="formData.lastName" required>
+    </div>
+    <div class="form-group">
+        <label for="puntaje">puntaje:</label>
+        <input type="number" id="puntaje" name="puntaje" class="form-control" [(ngModel)]="formData.puntaje" min="0" max="5">
+    </div>
+    
+    <label for="birthdate">Fecha de Nacimiento:</label>
+    <input type="date" id="birthdate" name="birthdate" [(ngModel)]="formData.birthdate" required>
+    <div>
+        <label>Género:</label>
+        <input type="radio" id="male" name="gender" value="male" [(ngModel)]="formData.gender">
+        <label for="male">Masculino</label>
+        <input type="radio" id="female" name="gender" value="female" [(ngModel)]="formData.gender">
+        <label for="female">Femenino</label>
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+
+
+
+
+
+<!-- 
+
+    <p></p>
+    <input type="">
+    <input type="text">
+    <input type="password">
+    <input type="email">
+    <input type="number">
+    <input type="date">
+    <input type="file">
+    <input type="radio">
+    <input type="checkbox">
+    <input type="button">
+    <input type="submit">
+    <input type="reset">
+    <input type="color">
+    <input type="range">
+    <input type="search">
+    <input type="tel">
+    <input type="time">
+    <input type="url">
+    <input type="week">
+    <input type="month">
+    <input type="datetime-local">
+    <input type="datetime">
+    <input type="hidden">
+    <input type="image">
+    <input type="month">
+
+    <label></label>
+    <textarea></textarea>
+    <p>
+        <select name="miselect" [(ngModel)]="seleccionado">
+            <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+        </select>
+        {{seleccionado}}
+    </p>
+
+    <button>soy un boton</button>
+
+
+ -->
